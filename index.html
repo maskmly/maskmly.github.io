@@ -10,6 +10,8 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<!-- <script src="https://www.google.com/recaptcha/api.js"></script> -->
+		<script src="https://www.google.com/recaptcha/api.js?render=6LciTHkaAAAAAGLafUDT6DO1p8W1nPog3N7WGNJw"></script>
 	</head>
 	<body class="is-preload">
 
@@ -68,25 +70,27 @@
 						<!-- Contact -->
 							<article id="contact">
 								<h2 class="major">Contact</h2>
-								<form method="post" action="#">
+								<form method="post" action="https://getform.io/f/3045665e-6873-4c0c-8491-bd9d53f01b0e">
 									<div class="fields">
 										<div class="field half">
 											<label for="name">Name</label>
-											<input type="text" name="name" id="name" />
+											<input type="text" name="name" id="name" required/>
 										</div>
 										<div class="field half">
 											<label for="email">Email</label>
-											<input type="text" name="email" id="email" />
+											<input type="text" name="email" id="email" required/>
 										</div>
 										<div class="field">
 											<label for="message">Message</label>
-											<textarea name="message" id="message" rows="4"></textarea>
+											<textarea name="message" id="message" rows="4" required></textarea>
 										</div>
 									</div>
 									<ul class="actions">
 										<li><input type="submit" value="Send Message" class="primary" /></li>
 										<li><input type="reset" value="Reset" /></li>
 									</ul>
+									<label>reCAPTCHA v3 in use.</label>
+									<input type="hidden" id="captchaResponse" name="g-recaptcha-response">
 								</form>
 								<ul class="icons">
 									<li><a href="https://github.com/maskmly" target="_blank" rel="noreferrer noopener" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
@@ -355,6 +359,18 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
-
+			<!-- <script>
+				function onSubmit(token) {
+				  document.getElementById("demo-form").submit();
+				}
+			  </script> -->
+			<script>
+				grecaptcha.ready(function() {
+					grecaptcha.execute('YOUR_SITE_KEY', {action: 'homepage'})
+					.then(function(token) {
+					  document.getElementById('captchaResponse').value = token;
+					});
+				  });
+			</script>
 	</body>
 </html>
