@@ -81,7 +81,7 @@
 										</div>
 									</div>
 									<ul class="actions">
-										<li><input type="submit" value="Send Message" class="primary" disabled="disabled"/></li>
+										<li><input type="submit" value="Send Message" class="primary" id="submitBtn" disabled/></li>
 										<li><input type="reset" value="Reset" /></li>
 									</ul>
 									<div class="g-recaptcha" data-sitekey="6LcPWHoaAAAAAC41f0vCgRiZr4avXGjGQKNPV9-j" data-callback="enableBtn"></div>
@@ -361,6 +361,6 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 					});
 				  });
 			</script>
-			<script>function enableBtn(){document.getElementById("submit").disabled = false;}</script>
+			<script>function enableBtn(){document.getElementById("submitBtn").disabled = false;}</script>
 	</body>
 </html>
