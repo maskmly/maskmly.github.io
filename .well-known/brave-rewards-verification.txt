@@ -1,0 +1,4 @@
+This is a Brave Rewards publisher verification file.
+
+Domain: maskmly.github.io
+Token: d0a559da7b133964d39c96dbf880e1e4a44193579216afdef2809d3295bb0842
